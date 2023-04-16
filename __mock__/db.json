@@ -1,0 +1,90 @@
+{
+  "boards": [
+    {
+      "id": 1,
+      "name": "Kanban Project",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "New Board",
+      "isActive": true
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Task Title 1",
+      "desc": "Task Desc",
+      "statusId": 2
+    },
+    {
+      "id": 2,
+      "title": "Task Title 2",
+      "desc": "Task Desc",
+      "statusId": 1
+    },
+    {
+      "name": "bajarildi",
+      "desc": "asdasd as as",
+      "statusId": 5,
+      "id": 3
+    },
+    {
+      "title": "new task",
+      "desc": "new description",
+      "statusId": 6,
+      "id": 4
+    }
+  ],
+  "statuses": [
+    {
+      "id": 1,
+      "name": "Started",
+      "color": "red",
+      "boardId": 1
+    },
+    {
+      "id": 2,
+      "name": "In Progress",
+      "color": "teal",
+      "boardId": 1
+    },
+    {
+      "id": 3,
+      "name": "New Column",
+      "color": "teal",
+      "boardId": 2
+    },
+    {
+      "name": "admin",
+      "color": "#fd6363",
+      "boardId": 1,
+      "id": 4
+    },
+    {
+      "name": "complated",
+      "color": "#cc2424",
+      "boardId": 1,
+      "id": 5
+    },
+    {
+      "name": "Started",
+      "color": "#6bdbab",
+      "boardId": 2,
+      "id": 6
+    },
+    {
+      "name": "new col",
+      "color": "bg-sky-400",
+      "boardId": 2,
+      "id": 7
+    },
+    {
+      "name": "new col",
+      "color": "bg-red-400",
+      "boardId": 1,
+      "id": 8
+    }
+  ]
+}
