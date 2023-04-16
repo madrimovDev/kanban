@@ -2,11 +2,10 @@ import React, { DragEvent, FC } from 'react'
 import type { Task as ITask } from 'src/store/types'
 
 export const Task: FC<{ task: ITask }> = ({ task }) => {
-	
 	const handleOnDrag = (e: DragEvent<HTMLDivElement>) => {
 		e.dataTransfer.setData('task', JSON.stringify(task))
 	}
-	
+
 	return (
 		<div
 			draggable

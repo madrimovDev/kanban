@@ -26,10 +26,7 @@ export const Column: FC<{ column: Status }> = ({ column }) => {
 			onDrop={handleOnDrop}
 			onDragOver={(e) => e.preventDefault()}
 			className='w-[250px] h-fit rounded-md overflow-hidden bg-stone-100'>
-			<h3
-				className={`p-3 ${column.color}`}>
-				{column.name}
-			</h3>
+			<h3 className={`p-3 ${column.color}`}>{column.name}</h3>
 			<div className='p-4'>
 				<CreateTask colId={column.id} />
 				{tasks.map((task) => (
