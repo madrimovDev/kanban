@@ -12,7 +12,7 @@ export const CreateColumn = () => {
 
 	useKeyDown('Escape', onClose)
 	useOutsideClick(formRef, onClose)
-	
+
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		const formData = new FormData(e.currentTarget)
@@ -36,8 +36,7 @@ export const CreateColumn = () => {
 				<AiFillPlusCircle />
 			</button>
 			{open && (
-				<div
-					className='fixed inset-0 bg-black/50 backdrop-blur-sm grid place-items-center'>
+				<div className='fixed inset-0 bg-black/50 backdrop-blur-sm grid place-items-center'>
 					<button
 						onClick={onClose}
 						className='absolute top-10 right-10 text-2xl'>
