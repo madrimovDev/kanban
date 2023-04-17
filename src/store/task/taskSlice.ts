@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice, isPending, isRejected } from '@reduxjs/toolkit'
-import { Status, Task } from '../types'
+import { Task } from '../types'
 import { createTask, getTasks } from './taskActions'
 
 interface State {

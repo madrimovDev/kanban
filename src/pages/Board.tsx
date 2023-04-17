@@ -9,6 +9,7 @@ export default function Board() {
 	const dispatch = useAppDispatch()
 
 	useEffect(() => {
+		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 		dispatch(getColumns(+boardId!))
 		console.log('render')
 	}, [boardId])

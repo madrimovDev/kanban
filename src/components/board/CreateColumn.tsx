@@ -17,6 +17,7 @@ export const CreateColumn = () => {
 		dispatch(
 			createColumn({
 				...data,
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 				boardId: +boardId!
 			})
 		)

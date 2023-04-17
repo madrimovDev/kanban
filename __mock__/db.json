@@ -22,7 +22,7 @@
       "id": 2,
       "title": "Task Title 2",
       "desc": "Task Desc",
-      "statusId": 1
+      "statusId": 8
     },
     {
       "name": "bajarildi",
@@ -33,8 +33,20 @@
     {
       "title": "new task",
       "desc": "new description",
-      "statusId": 6,
+      "statusId": 7,
       "id": 4
+    },
+    {
+      "title": "New Task",
+      "desc": "Descr\n",
+      "statusId": 1,
+      "id": 5
+    },
+    {
+      "title": "asd",
+      "desc": "asd",
+      "statusId": 5,
+      "id": 6
     }
   ],
   "statuses": [
@@ -85,6 +97,18 @@
       "color": "bg-red-400",
       "boardId": 1,
       "id": 8
+    },
+    {
+      "name": "newAdmin",
+      "color": "bg-sky-400",
+      "boardId": 1,
+      "id": 9
+    },
+    {
+      "name": "newAdmin",
+      "color": "bg-sky-400",
+      "boardId": 2,
+      "id": 10
     }
   ]
 }

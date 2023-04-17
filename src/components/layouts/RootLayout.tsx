@@ -1,10 +1,10 @@
-import React, { FC, PropsWithChildren, useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 import { Header } from './Header'
 import { Sidebar } from './Sidebar'
 import { getBoards, useAppDispatch } from '@store'
 import { Outlet } from 'react-router-dom'
 
-export const RootLayout: FC<PropsWithChildren> = ({ children }) => {
+export const RootLayout: FC = () => {
 	const dispatch = useAppDispatch()
 
 	useEffect(() => {
