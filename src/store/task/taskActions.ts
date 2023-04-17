@@ -19,3 +19,8 @@ export const createTask = createAsyncThunk(
 		return task.data
 	}
 )
+
+export const deleteTask = createAsyncThunk('tasks/delete', async (id: number) => {
+	await api.delete(`/tasks/${id}`)
+	return id
+})

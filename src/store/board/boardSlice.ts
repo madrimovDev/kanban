@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice, isPending, isRejected } from '@reduxjs/toolkit'
 import { Board } from '../types'
-import { createBoard, getBoards } from './boardActions'
+import { createBoard, deleteBoard, getBoards } from './boardActions'
 
 interface State {
 	loading: boolean
@@ -29,11 +29,16 @@ const boardSlice = createSlice({
 			state.error = false
 			state.boards.push(action.payload)
 		})
-		builder.addMatcher(isPending(getBoards, createBoard), (state) => {
+		builder.addCase(deleteBoard.fulfilled, (state, action: PayloadAction<number>) => {
+			state.loading = false
+			state.error = false
+			state.boards = state.boards.filter((b) => b.id !== action.payload)
+		})
+		builder.addMatcher(isPending(getBoards, createBoard, deleteBoard), (state) => {
 			state.loading = true
 			state.error = false
 		})
-		builder.addMatcher(isRejected(getBoards, createBoard), (state) => {
+		builder.addMatcher(isRejected(getBoards, createBoard, deleteBoard), (state) => {
 			state.loading = false
 			state.error = true
 		})

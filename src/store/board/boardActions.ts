@@ -7,7 +7,15 @@ export const getBoards = createAsyncThunk('boards/getAll', async () => {
 	return boards.data
 })
 
-export const createBoard = createAsyncThunk('boards/create', async (board: Board) => {
-	const boards = await api.post<Board>('/boards', board)
+export const createBoard = createAsyncThunk('boards/create', async (name: string) => {
+	const boards = await api.post<Board>('/boards', {
+		name,
+		isActive: true
+	})
 	return boards.data
+})
+
+export const deleteBoard = createAsyncThunk('boards/delete', async (id: number) => {
+	await api.delete(`/boards/${id}`)
+	return id
 })

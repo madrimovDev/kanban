@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice, isPending, isRejected } from '@reduxjs/toolkit'
 import { Task } from '../types'
-import { createTask, getTasks } from './taskActions'
+import { createTask, deleteTask, getTasks } from './taskActions'
 
 interface State {
 	loading: boolean
@@ -41,11 +41,16 @@ const taskSlice = createSlice({
 			state.error = false
 			state.tasks.push(action.payload)
 		})
-		builder.addMatcher(isPending(getTasks, createTask), (state) => {
+		builder.addCase(deleteTask.fulfilled, (state, action: PayloadAction<number>) => {
+			state.loading = false
+			state.error = false
+			state.tasks = state.tasks.filter((t) => t.id !== action.payload)
+		})
+		builder.addMatcher(isPending(getTasks, createTask, deleteTask), (state) => {
 			state.loading = true
 			state.error = false
 		})
-		builder.addMatcher(isRejected(getTasks, createTask), (state) => {
+		builder.addMatcher(isRejected(getTasks, createTask, deleteTask), (state) => {
 			state.loading = false
 			state.error = true
 		})

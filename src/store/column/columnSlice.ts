@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice, isPending, isRejected } from '@reduxjs/toolkit'
 import { Status } from '../types'
-import { createColumn, getColumns } from './columnActions'
+import { createColumn, deleteColumn, getColumns } from './columnActions'
 
 interface State {
 	loading: boolean
@@ -29,11 +29,16 @@ const columnSlice = createSlice({
 			state.error = false
 			state.statuses.push(action.payload)
 		})
-		builder.addMatcher(isPending(getColumns, createColumn), (state) => {
+		builder.addCase(deleteColumn.fulfilled, (state, action: PayloadAction<number>) => {
+			state.loading = false
+			state.error = false
+			state.statuses = state.statuses.filter((s) => s.id !== action.payload)
+		})
+		builder.addMatcher(isPending(getColumns, createColumn, deleteColumn), (state) => {
 			state.loading = true
 			state.error = false
 		})
-		builder.addMatcher(isRejected(getColumns, createColumn), (state) => {
+		builder.addMatcher(isRejected(getColumns, createColumn, deleteColumn), (state) => {
 			state.loading = false
 			state.error = true
 		})

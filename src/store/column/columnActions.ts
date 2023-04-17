@@ -14,3 +14,8 @@ export const createColumn = createAsyncThunk(
 		return columns.data
 	}
 )
+
+export const deleteColumn = createAsyncThunk('columns/delete', async (id: number) => {
+	await api.delete(`/statuses/${id}`)
+	return id
+})
