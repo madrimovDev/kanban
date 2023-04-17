@@ -10,7 +10,6 @@
     "format": "prettier ./src -c -w",
     "eslint:check": "eslint ./src",
     "eslint:fix": "eslint ./src --fix",
-    "prepare": "husky install",
     "serve": "yarn json-server --watch --port 8080 ./__mock__/db.json"
   },
   "dependencies": {
