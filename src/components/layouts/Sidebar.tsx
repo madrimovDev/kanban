@@ -2,7 +2,6 @@ import React from 'react'
 import classnames from 'classnames'
 import { Link, useLocation } from 'react-router-dom'
 import { deleteBoard, useAppDispatch, useAppSelector } from '@store'
-import { BsPlus } from 'react-icons/bs'
 import { CreateBoard } from '../board/CreateBoard'
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai'
 
